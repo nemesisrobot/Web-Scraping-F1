@@ -1,0 +1,65 @@
+--cria base de dados
+use projeto_formula1
+
+--criando coleção para armazenar dados dos pilotos
+db.createCollection("pilotos")
+
+--comando para procurar dados em uma coleção
+db.pilotos.find()
+
+--inserindo dados
+db.pilotos.insert(
+{
+	'World Championships': 'N/A',
+	'Place of birth': 'Bristol, England',
+	'Country': 'United Kingdom',
+	'Team': 'McLaren',
+	'Grands Prix entered': '27',
+	'Date of birth': '13/11/1999',
+	'Points': '88',
+	'Highest race finish': '3 (x1)',
+	'Highest grid position': '3',
+	'Podiums': '1'
+}
+)
+
+--insert de dados
+db.pilotos.insert(
+{
+	'Lutador':'Jose aldo',
+	'lutas':'boxe/muay thai',
+	'idade':'30'
+}
+)
+
+db.pilotos.insert(
+{
+	'Jogador':'Gabi Gol',
+	'Clube':'flamengo',
+	'gols':'5',
+	'tipo':'ataque'
+}
+)
+
+5f4afcf86bdefb14e9f83786
+Lutador
+ "_id" : ObjectId("5f4afcf86bdefb14e9f83786")
+--procura dado especifico
+db.pilotos.find(
+	{ "_id" : ObjectId("5f4afcf86bdefb14e9f83786")}
+)
+
+db.pilotos.find(
+	{ "Jogador" : "Gabi Gol"}
+)
+
+--como para update de dados
+db.pilotos.update({'Lutador':'Jose aldo'},
+   {$set:{'Lutador':'José Aldo'}})
+   
+--deletando dados
+db.pilotos.remove({ "_id" : ObjectId("5f4afcf86bdefb14e9f83786")})
+db.pilotos.remove({ "Lutador" : "Jose aldo"})
+
+
+
